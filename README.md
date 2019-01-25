@@ -99,7 +99,7 @@ The project can either be run locally or deployed on the Ropsten testnet
 
 ```
 $ git clone [URL of this project]
-$ cd truffle/
+$ cd BountyCollectorConsensysDevProgram18/truffle/
 ```
 
 2) In a new terminal window, start a development blockchain with:
@@ -133,7 +133,7 @@ $ personal.unlockAccount(eth.coinbase, "yourPassword", "LoggedDuration") (change
 2) In a new terminal window, clone the repository
 ```
 $ git clone [URL Of this project]
-$ cd truffle/
+$ cd BountyCollectorConsensysDevProgram18/truffle/
 ```
 3) Compile and migrate the contracts:
 ```
