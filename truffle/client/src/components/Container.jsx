@@ -33,7 +33,7 @@ class Container extends Component {
     const disputeCost = parseInt(await this.props.appState.contract.disputeCost());
     var expirationTime = new Date(parseInt(await this.props.appState.contract.contractExpiration())*1000);
     expirationTime = expirationTime.toUTCString();
-    const disputeTime = parseInt(await this.props.appState.contract.disputeAllowance()/86400);
+    const disputeTime = parseInt(await this.props.appState.contract.disputeAllowance()/3600);
     const arbitragerAddress = await this.props.appState.contract.arbitrager();
     const ownerAddress = await this.props.appState.contract.owner();
     var contractStatus = "active";
