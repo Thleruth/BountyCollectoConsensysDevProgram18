@@ -160,7 +160,7 @@ Alternatively for both local and Ropsten deployment the interface could be deplo
 Run instead of:
 
 ```
-npm run start
+$ npm run start
 ```
 The followings:
 
