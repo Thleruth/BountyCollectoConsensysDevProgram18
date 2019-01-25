@@ -1,0 +1,19 @@
+.list-group {
+  display: inline-grid;
+}
+
+.list-group-item {
+  padding: 3px;
+  list-style-position:inside;
+  border: 1px solid black;
+}
+
+.list-group-item:hover {
+    background-color: purple;
+    color: white;
+}
+
+.active {
+    background-color: grey;
+    color: white;
+}

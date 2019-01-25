@@ -1,0 +1,2 @@
+The contract is deployed at "0x57dd929faba61f98d5127cd9e7cf65616e7115fc" on Ropsten and is resolved via the ENS public registrar as "BountyDApp.test"
+The interface is hosted on IPFS with the hash "" which can directly be access via a personal node or ""

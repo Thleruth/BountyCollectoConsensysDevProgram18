@@ -1,0 +1,51 @@
+Beneath can be found 3 potential contract suggestions that could be done to improve this contract. The ideas are ordered from the most interesting to the least interesting (in my view)
+There were not implemented in the case of this contract due to time constraint and for the sake of not over complicating the already complex contract.
+
+* Reveal/commit design or Submarine sends
+Frontrunning could be an issue in this contract as the proposal can be read from the mempool and then reproduced before the initial one was included in a block.
+> Solutions: Two viable options exist that could be implemented to fix this issue.
+
+- Reveal/commit:
+-- Idea: The proposal poster would first send hash data and then reveal it once the initial transactions has been mined
+-- Implementation
+1) Poster sends a hash of its proposal data and his sending address (to avoid copying the load) which is stored in array of commits [Struct] (uint => Commit)
+2) Poster sends a reveal including all the proposal data. The contract takes the data and msg.sender, hash it, validate that it matches the targeted commit. If so, contract saves the data as a valid proposal
+
+- Submarine sends (with Create2)
+-- Idea: The proposal poster could send a hidden transaction (submerged) and then reveal it later to show it was sent before without giving the option to anybody to claim it
+-- Implementation
+1) Poster could use Create2 to calculate the theoretical address of a contract including the wanted Data [via the init code]
+2) Poster can reveal that the initial commit was made and the output of create2 to the contract
+3) The contract checks the data and executes its logic
+
+Opinion: The advantage of submarines sends is its full privacy until the reveal action. However, it is more gas costly as the reveal/commit as the initial commit require on chain hashing
+Submarine sends become particularly useful in case not only data is sent but also a hidden value (which can't be done in the reveal/commit pattern). Therefore, for this use case, I'd go for reveal/commit
+
+
+* Arbitraging group
+The contract has only one arbitrager which could lead to corruption (as her decision can lead to financial impacts)
+> Solution: Have a group of arbitrage with staked resources
+-- Implementation
+1) Create an array of arbitragers which anybody can apply to it by staking a given amount or quit and get her staked money back
+2) Create a voting function to vote on disputes and also accept or kick out arbitragers
+3) The disputes would work the same way than currently except that the reward would be spread among all voters
+4) If a member is kicked out his staked amount is burned (to avoid kicking out members to simply gain her staked resources)
+5) Have a minimal number of arbitragers to reduce the potential cartel-like behavior
+
+Opinion: This solution is better than the current dictator-style decision power. However, cartel behavior could be created. Increasing the minimal amount of
+arbitragers and increased the staked amount would partially mitigate the risk
+
+
+* Stable coin as payment
+The contract uses Ether as its payment source. Unfortunately, Ether is volatile which could lead to a currency risk on all the parties
+> Use a stable coin (e.g. DAI) to avoid the risk
+-- Implementation
+1) Have any payable transactions changed to use the approve() from the ERC20 standard
+2) Have the contract uses the transferFrom() from the ERC20 standard to get the tokens ["get" meaning changing the balances on the contract]
+
+Opinion: This is great solution but the ERC20 but this solution requires multiple steps decreasing user experience.
+Further standards work on avoid that (e.g. ERC233 or ERC667) which could make the user experience better
+
+---------
+
+Additionally to the contract suggestions, the UI could be reworked as it was not the focus of this project and it is my first usable interface that I make with React.

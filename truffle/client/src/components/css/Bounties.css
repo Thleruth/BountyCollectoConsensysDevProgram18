@@ -1,0 +1,13 @@
+.column {
+  display: flex;
+  display: -webkit-inline-box
+}
+
+.bounty-status-filter {
+  width: 25%;
+  padding-top:30px
+}
+
+.shown-bounties {
+  width: 25%;
+}
