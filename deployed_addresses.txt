@@ -1,2 +1,2 @@
 The contract is deployed at "0x57dD929fABA61F98D5127CD9e7cF65616E7115Fc" on Ropsten and is resolved via the ENS public registrar as "BountyDApp.test"
-The interface is hosted on IPFS with the hash "QmNRFimF43yVUA6yWs2wH9ms8gmmYn28SZy7aA5pKZQVEg" which can directly be access via a personal node or "https://ipfs.io/ipfs/QmNRFimF43yVUA6yWs2wH9ms8gmmYn28SZy7aA5pKZQVEg"
+The interface is hosted on IPFS with the hash "TBA" which can directly be access via a personal node or "https://ipfs.io/ipfs/TBA"
