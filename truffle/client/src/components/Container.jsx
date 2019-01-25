@@ -31,7 +31,7 @@ class Container extends Component {
     const bountiesCounter = parseInt(await this.props.appState.contract.bountiesCounter());
     const disputesCounter = parseInt(await this.props.appState.contract.disputesCounter());
     const disputeCost = parseInt(await this.props.appState.contract.disputeCost());
-    var expirationTime = new Date(Date().valueOf(parseInt(await this.props.appState.contract.contractExpiration())));
+    var expirationTime = new Date(parseInt(await this.props.appState.contract.contractExpiration())*1000);
     expirationTime = expirationTime.toUTCString();
     const disputeTime = parseInt(await this.props.appState.contract.disputeAllowance()/86400);
     const arbitragerAddress = await this.props.appState.contract.arbitrager();

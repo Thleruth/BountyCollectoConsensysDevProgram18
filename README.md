@@ -151,8 +151,8 @@ $ npm run start
 #### Alternatives
 
 Alternatively for deploying on Ropsten an Infura node could be used, follow the steps above but instead of step 1 do the followings:
-1) Uncomment lines 17-22 in truffle.js
-2) comment lines 24-28 in truffle.js
+1) Uncomment lines 2-4 and 17-22 in truffle.js
+2) Comment lines 24-28 in truffle.js
 3) Change the strings "CHANGEME"
 
 Alternatively for both local and Ropsten deployment the interface could be deploy externally with (step 5 in local and 4 for Ropsten):

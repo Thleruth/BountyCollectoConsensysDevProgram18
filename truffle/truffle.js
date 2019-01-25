@@ -1,7 +1,7 @@
 const path = require("path");
-var HDWalletProvider = require("truffle-hdwallet-provider");
-const MNEMONIC = 'CHANGEME';
-const INFURANODEACCESS = 'CHANGEME'
+// var HDWalletProvider = require("truffle-hdwallet-provider");
+// const MNEMONIC = 'CHANGEME';
+// const INFURANODEACCESS = 'CHANGEME'
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
